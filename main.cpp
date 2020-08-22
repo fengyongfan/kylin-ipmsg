@@ -14,6 +14,11 @@ int main(int argc, char *argv[])
 {
 //    QApplication::setGraphicsSystem("raster");
 
+    #if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
+        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+        QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    #endif
+
     QtSingleApplication app(argc, argv);
 //    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 //    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
